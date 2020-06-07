@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				background-color: brown;
+				color: cornsilk;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				flex-direction: column;
+			}
+			a {
+				text-decoration: none;
+				padding: 10px;
+				background-color: darkslateblue;
+				color: #fff;
+				font-size: 26px;
+				font-weight: bold;
+			}
+			.video {
+				background-color: #000;
+				font-size: 33px;
+				font-weight: bold;
+				padding: 20px;
+			}
+		</style>
+		<title>Document</title>
+	</head>
+	<body>
+		{% if isLogin %}
+		<div class="video">视频内容</div>
+		<a href="/">回到主页</a>
+		{% else%}
+		<p>登录后才能观看内容</p>
+		<a href="/login">请登录</a>
+		{% endif %}
+	</body>
+</html>
