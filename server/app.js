@@ -3,31 +3,20 @@ const Router = require('koa-router');
 const fs = require('fs');
 const path = require('path');
 const app = new Koa();
-
 const route = new Router();
 
-const readFile = (address) =>
-	new Promise((resolve, reject) => {
-		fs.readFile(address, 'utf-8', (err, result) => {
-			if (err) reject(new Error('This is a error...'));
-			resolve(result);
-		});
-	}).catch((err) => err);
+// const readFile = (address) =>
+// 	new Promise((resolve, reject) => {
+// 		fs.readFile(address, 'utf-8', (err, result) => {
+// 			if (err) reject(new Error('This is a error...'));
+// 			resolve(result);
+// 		});
+// 	}).catch((err) => err);
 
-route
-	.get('/article/:id', (ctx, next) => {
-		console.log(ctx.querystring);
-		ctx.body = ctx.querystring;
-	})
-	.get('/home', async (ctx) => {
-		const data = await readFile(
-			path.join(path.dirname(__dirname), 'static', 'index.html')
-		);
-		console.log(
-			'Address:' + path.join(path.dirname(__dirname), 'static', 'index.html')
-		);
-		ctx.body = data;
-	});
+// Import routes
+const home = require('../routes/home.js');
+route.use('/api', home.routes(), home.allowedMethods());
+
 app.use(route.routes()).use(route.allowedMethods());
 
 app.listen(3000, () => console.log('Server is running...'));

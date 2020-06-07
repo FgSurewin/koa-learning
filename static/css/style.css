@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: brown;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+}
+button {
+	color: cornsilk;
+	border: none;
+	font-size: 26px;
+	padding: 10px;
+	outline: none;
+}
