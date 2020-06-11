@@ -1,0 +1,21 @@
+{
+	"name": "mysqlDemo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"koa": "^2.12.0",
+		"koa-bodyparser": "^4.3.0",
+		"koa-router": "^9.0.1",
+		"koa-static": "^5.0.0",
+		"koa-views": "^6.2.3",
+		"nunjucks": "^3.2.1"
+	}
+}
